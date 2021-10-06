@@ -7,9 +7,9 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-app.get('/test', function (req, res) {
+app.post('/test', function (req, res) {
   res.send({
-    message:'Hello world'
+    message: req.body.text
   })
 })
 
