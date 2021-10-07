@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import Methods from '@/api/methods'
 export default {
   name: 'HelloWorld',
   data () {
@@ -15,9 +14,11 @@ export default {
     }
   },
   methods: {
-    async post () {
-      const response = await Methods.testPosting()
-      console.log(response)
+    post () {
+      const word = { text: 'Scceess!' }
+      this.$store.dispatch('testPosting', word).then((response) => {
+        console.log(response)
+      })
     }
   }
 }
