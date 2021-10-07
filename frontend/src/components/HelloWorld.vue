@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <button @click='get'>get</button>
     <button @click='post'>click me</button>
   </div>
 </template>
@@ -17,6 +18,11 @@ export default {
     post () {
       const word = { text: 'Scceess!' }
       this.$store.dispatch('testPosting', word).then((response) => {
+        console.log(response)
+      })
+    },
+    get () {
+      this.$store.dispatch('testGetting').then((response) => {
         console.log(response)
       })
     }

@@ -10,8 +10,10 @@ export default createStore({
   },
   actions: {
     testPosting (state, word) {
-      console.log(word)
       return axios.post('/test', word)
+    },
+    testGetting (state) {
+      return axios.get('/test2')
     }
   },
   modules: {
