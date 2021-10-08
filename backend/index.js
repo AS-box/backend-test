@@ -19,10 +19,7 @@ const connection = mysql.createPool({
 app.get('/test2', (req, res) => {
   connection.query(
     'SELECT*FROM names', (error, results) => {
-      console.log(results)
-      res.send({
-        names:results
-      })
+      res.json(results)
     }
   )
 })

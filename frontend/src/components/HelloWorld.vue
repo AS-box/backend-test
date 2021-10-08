@@ -3,15 +3,18 @@
     <h1>{{ msg }}</h1>
     <button @click='get'>get</button>
     <button @click='post'>click me</button>
+    <ul>
+      <li v-for="game in games" :key="game">{{game.name}}</li>
+    </ul>
   </div>
 </template>
-
 <script>
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Yout Vue.js App'
+      msg: 'Welcome to Yout Vue.js App',
+      games: {}
     }
   },
   methods: {
@@ -23,7 +26,8 @@ export default {
     },
     get () {
       this.$store.dispatch('testGetting').then((response) => {
-        console.log(response)
+        this.games = response.data
+        console.log(this.games)
       })
     }
   }
