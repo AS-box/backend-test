@@ -5,15 +5,17 @@ axios.defaults.baseURL = 'http://localhost:3000/'
 
 export default createStore({
   state: {
+    games: {}
   },
   mutations: {
+    gamesSet (state, games) {
+      this.state.games = games
+    }
   },
   actions: {
-    testPosting (state, word) {
-      return axios.post('/test', word)
-    },
-    testGetting (state) {
-      return axios.get('/test2')
+    async testGetting (state) {
+      const games = await axios.get('/test')
+      this.commit('gamesSet', games.data)
     }
   },
   modules: {

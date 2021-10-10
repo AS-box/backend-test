@@ -1,5 +1,4 @@
 const express = require('express')
-const bodyParser = require('body-parser')
 const mysql = require('mysql');
 
 const cors = require('cors')
@@ -16,19 +15,19 @@ const connection = mysql.createPool({
   database: 'game'
 })
 
-app.get('/test2', (req, res) => {
+app.get('/test', (req, res) => {
   connection.query(
     'SELECT*FROM names', (error, results) => {
-      res.json(results)
+      res.send(results)
     }
   )
 })
 
-app.post('/test', function (req, res) {
-  console.log(req.body.text)
-  res.send({
-    message: req.body.text
-  })
-})
+// app.post('/test', function (req, res) {
+//   console.log(req.body.text)
+//   res.send({
+//     message: req.body.text
+//   })
+// })
 
 app.listen(process.env.port||3000)
