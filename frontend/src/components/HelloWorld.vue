@@ -21,10 +21,15 @@ export default {
   },
   methods: {
     get () {
-      this.$store.dispatch('testGetting').then((response) => {
+      this.$store.dispatch('testGetting').then(() => {
         this.games = this.$store.state.games
       })
     },
+    // get () {
+    //   this.$store.dispatch('testGetting').then((response) => {
+    //     this.games = this.$store.state.games
+    //   })
+    // },
     submit () {
 
     }
