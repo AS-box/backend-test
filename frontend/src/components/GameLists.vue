@@ -1,12 +1,10 @@
 <template>
-  <div class="hello">
-    <button @click='get'>get</button>
-    <form action="POST">
-      <input type="text" name="name" id="name" placeholder="ゲームの名前" v-model="gameName">
-      <button @click="submit" type="submit">submit</button>
-    </form>
-    <ul>
-      <li v-for="game in games" :key="game">{{game.name}}</li>
+  <div class="gameList">
+    <ul class="columns">
+      <li v-for="game in games" :key="game" class="column">
+        <h2>{{game.name}}</h2>
+        <p>{{game.discription}}</p>
+      </li>
     </ul>
   </div>
 </template>
@@ -18,6 +16,9 @@ export default {
       games: {},
       gameName: ''
     }
+  },
+  created () {
+    this.get()
   },
   methods: {
     get () {
@@ -31,3 +32,5 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+</style>
