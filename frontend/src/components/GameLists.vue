@@ -1,5 +1,5 @@
 <template>
-  <div class="gameList">
+  <div class="gameList mt-4">
     <ul class="columns">
       <li v-for="game in games" :key="game" class="column">
         <h2>{{game.name}}</h2>
