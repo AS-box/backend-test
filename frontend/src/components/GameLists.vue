@@ -12,7 +12,7 @@
 </template>
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'GameLists',
   data () {
     return {
       games: {},
@@ -25,11 +25,6 @@ export default {
         this.games = this.$store.state.games
       })
     },
-    // get () {
-    //   this.$store.dispatch('testGetting').then((response) => {
-    //     this.games = this.$store.state.games
-    //   })
-    // },
     submit () {
 
     }
