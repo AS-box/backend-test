@@ -22,12 +22,9 @@ export default {
   },
   methods: {
     get () {
-      this.$store.dispatch('testGetting').then(() => {
+      this.$store.dispatch('getGameLists').then(() => {
         this.games = this.$store.state.games
       })
-    },
-    submit () {
-
     }
   }
 }

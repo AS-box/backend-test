@@ -13,10 +13,16 @@ export default createStore({
     }
   },
   actions: {
-    async testGetting (state) {
-      const games = await axios.get('/test')
+    async getGameLists (state) {
+      const games = await axios.get('/list')
       this.commit('gamesSet', games.data)
+    },
+    async postGame (state, game) {
+      await axios.post('/create', game).then(res => {
+        console.log(res)
+      })
     }
+
   },
   modules: {
   }

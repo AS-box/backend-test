@@ -15,19 +15,24 @@ const connection = mysql.createPool({
   database: 'game'
 })
 
-app.get('/test', (req, res) => {
+app.get('/list', (req, res) => {
   connection.query(
     'SELECT*FROM names', (error, results) => {
       res.send(results)
     }
   )
 })
+app.post('/create', cors(), (req, res) => {
+  connection.query('INSERT INTO names (name, discription) VALUES (?,?)',
+    [req.body.name, req.body.discription],
+    (error, results) => {
+      if (error) {
+        console.log(results)
+      } else {
+        res.redirect('/')
+      }
+  })
+})
 
-// app.post('/test', function (req, res) {
-//   console.log(req.body.text)
-//   res.send({
-//     message: req.body.text
-//   })
-// })
 
 app.listen(process.env.port||3000)

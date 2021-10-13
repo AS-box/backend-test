@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Nav></Nav>
-    <put-game></put-game>
+    <post-game></post-game>
     <game-lists></game-lists>
   </div>
 </template>
@@ -10,14 +10,14 @@
 // @ is an alias to /src
 import GameLists from '@/components/GameLists.vue'
 import Nav from '../components/nav.vue'
-import PutGame from '../components/PutGame.vue'
+import PostGame from '../components/PostGame.vue'
 
 export default {
   name: 'Home',
   components: {
     GameLists,
     Nav,
-    PutGame
+    PostGame
   }
 }
 </script>
