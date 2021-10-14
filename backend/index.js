@@ -27,9 +27,9 @@ app.post('/create', cors(), (req, res) => {
     [req.body.name, req.body.discription],
     (error, results) => {
       if (error) {
-        console.log(results)
+        res.send(error)
       } else {
-        res.redirect('/')
+        res.send(results)
       }
   })
 })

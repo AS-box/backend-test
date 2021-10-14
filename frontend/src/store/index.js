@@ -19,7 +19,7 @@ export default createStore({
     },
     async postGame (state, game) {
       await axios.post('/create', game).then(res => {
-        console.log(res)
+        window.location.href = '/'
       })
     }
 
