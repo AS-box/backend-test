@@ -20,7 +20,6 @@ export default {
   name: 'GameLists',
   data () {
     return {
-      games: {},
       gameName: '',
       gameDiscription: ''
     }
