@@ -3,7 +3,7 @@
     <form action="/create" method="post">
       <input class="input mt-4" type="text" name="name" id="name" placeholder="ゲームの名前" v-model="gameName">
       <textarea class="textarea mt-4" name="discription" id="discription" cols="30" rows="10" v-model="gameDiscription" placeholder="ゲームの説明"></textarea>
-      <button class="button is-info mt-4" @click="submitGame" type="button">submit</button>
+      <button class="button is-info mt-4" @click="submitGame" :disabled="!gameName || !gameDiscription" type="button">submit</button>
     </form>
   </div>
 </template>
@@ -27,14 +27,10 @@ export default {
   },
   methods: {
     submitGame () {
-      if (this.gameName && this.gameDiscription) {
-        this.$store.dispatch('postGame', {
-          name: this.gameName,
-          discription: this.gameDiscription
-        })
-      } else {
-        alert('データを入力してください')
-      }
+      this.$store.dispatch('postGame', {
+        name: this.gameName,
+        discription: this.gameDiscription
+      })
     }
   }
 }

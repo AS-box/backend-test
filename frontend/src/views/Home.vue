@@ -9,8 +9,8 @@
 <script>
 // @ is an alias to /src
 import GameLists from '@/components/GameLists.vue'
-import Nav from '../components/nav.vue'
-import PostGame from '../components/PostGame.vue'
+import Nav from '@/components/nav.vue'
+import PostGame from '@/components/PostGame.vue'
 
 export default {
   name: 'Home',

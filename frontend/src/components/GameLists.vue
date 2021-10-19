@@ -2,8 +2,10 @@
   <div class="gameList mt-4">
     <ul class="columns">
       <li v-for="game in games" :key="game" class="column">
-        <h2>{{game.name}}</h2>
-        <p>{{game.discription}}</p>
+        <div class="card">
+          <div class="card-header is-size-4">{{game.name}}</div>
+          <div class="card-content">{{game.discription}}</div>
+        </div>
       </li>
     </ul>
   </div>
@@ -30,4 +32,15 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.card{
+   align-items: stretch;
+   height: 100%;
+  .card-header{
+    justify-content: center;
+    box-shadow:none;
+    background: cornflowerblue;
+    color: #fff;
+    display: flex;
+  }
+}
 </style>
