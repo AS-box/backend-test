@@ -1,7 +1,7 @@
 <template>
   <div class="gameList mt-4">
-    <ul class="columns">
-      <li v-for="game in games" :key="game" class="column">
+    <ul class="columns is-tablet">
+      <li v-for="game in games" :key="game" class="column is-one-third">
         <div class="card">
           <div class="card-header is-size-4">{{game.name}}</div>
           <div class="card-content">{{game.discription}}</div>
@@ -32,6 +32,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.columns{
+  flex-wrap: wrap;
+}
 .card{
    align-items: stretch;
    height: 100%;

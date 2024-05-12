@@ -11,6 +11,8 @@
   text-align: center;
   color: #2c3e50;
   padding:10px 10px ;
+  max-width: 900px;
+  margin:auto;
 }
 
 #nav {

@@ -29,7 +29,7 @@ app.post('/create', cors(), (req, res) => {
       if (error) {
         res.send(error)
       } else {
-        res.send(results)
+        res.redirect('/')
       }
   })
 })
